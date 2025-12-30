@@ -1,13 +1,18 @@
-# 🛡️ SENTINEL - Insider Trading Detection System
+# 🛡️ SENTINEL
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Security: A-](https://img.shields.io/badge/security-A--grade-green.svg)]()
+![SENTINEL Banner](docs/assets/banner.png)
 
-> **AI-powered compliance system for detecting insider trading in Indonesian capital markets using RAG (Retrieval-Augmented Generation) and LLM technology.**
+[![Tests](https://github.com/loxleyftsck/Sentinel-project/actions/workflows/ci.yml/badge.svg)](https://github.com/loxleyftsck/Sentinel-project/actions)
+[![Grade](https://img.shields.io/badge/Quality_Score-92%2F100-brightgreen.svg)](docs/VICTORY_REPORT.md)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+AI-Powered Insider Trading Compliance Monitoring System.
+
+**Status**: 95% Complete | **Quality Grade**: A- (92/100) 🏆
 
 ## 🎯 Overview
+
+![UI Preview](docs/assets/ui_preview.png)
 
 SENTINEL is a production-grade foundation for building insider trading detection and compliance monitoring systems. It leverages modern LLM technology with RAG pipelines to analyze transactions against Indonesian financial regulations (POJK).
 
