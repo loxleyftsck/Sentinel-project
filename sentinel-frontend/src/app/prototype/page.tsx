@@ -138,7 +138,57 @@ export default function PrototypePage() {
                 </div>
             </section>
 
-            {/* Tech Stack Inspiration (Builder.io style) */}
+            {/* NEW: Interactive Audit Simulation */}
+            <section className="py-24 px-6 border-t border-white/5">
+                <div className="max-w-5xl mx-auto space-y-16">
+                    <div className="text-center space-y-4">
+                        <h2 className="text-4xl font-bold tracking-tight italic uppercase">Live "Agentic" Audit Flow</h2>
+                        <p className="text-white/40 max-w-xl mx-auto">Lihat bagaimana AI memproses transaksi mencurigakan secara otomatis (Simulasi v2.0).</p>
+                    </div>
+
+                    <div className="rounded-2xl border border-white/10 bg-[#0c0c0c] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-500">
+                        {/* Terminal Header */}
+                        <div className="px-4 py-3 bg-white/5 border-b border-white/5 flex items-center justify-between">
+                            <div className="flex gap-1.5">
+                                <div className="h-2.5 w-2.5 rounded-full bg-red-500/50" />
+                                <div className="h-2.5 w-2.5 rounded-full bg-amber-500/50" />
+                                <div className="h-2.5 w-2.5 rounded-full bg-green-500/50" />
+                            </div>
+                            <div className="text-[10px] font-mono text-white/20 uppercase tracking-widest">Sentinel.sh — Agent Instance #0442</div>
+                        </div>
+
+                        {/* Terminal Content */}
+                        <div className="p-8 font-mono text-sm space-y-4 overflow-x-auto text-left">
+                            <div className="flex gap-4">
+                                <span className="text-cyan-500 font-bold">→</span>
+                                <span className="text-white/40">Injesting real-time feed from IDX API...</span>
+                            </div>
+                            <div className="flex gap-4">
+                                <span className="text-cyan-500 font-bold">→</span>
+                                <span className="text-white/80">Anomaly Detected: <span className="text-red-400 font-bold">STOCK_XYZ</span> (Vol spike 4.5x std_dev)</span>
+                            </div>
+                            <div className="flex gap-4 pl-8 border-l border-white/10">
+                                <span className="text-white/40 italic">Searching regulatory database (RAG)...</span>
+                            </div>
+                            <div className="flex gap-4 pl-8 border-l border-white/10">
+                                <span className="text-white/40 font-bold">Found Reference:</span> <span className="text-cyan-400 underline underline-offset-4 decoration-cyan-400/30 font-bold">POJK 31/04/2015 Artikel 2</span>
+                            </div>
+                            <div className="flex gap-4 pt-4">
+                                <span className="text-cyan-500 font-bold">→</span>
+                                <span className="text-amber-400 font-bold tracking-tighter uppercase text-xs">[AI Reasoning Insight]</span>
+                            </div>
+                            <div className="mt-2 p-6 bg-white/[0.02] rounded-lg border border-white/5 italic text-white/50 text-xs leading-relaxed max-w-2xl">
+                                "Transaksi ini menunjukkan pola 'front-running' yang berkorelasi dengan berita RUPS internal pukul 14:00 WIB.
+                                Sesuai POJK 31, akun ini harus masuk ke daftar pantau investigasi level 1."
+                            </div>
+                            <div className="flex gap-4 pt-6">
+                                <div className="h-2 w-2 rounded-full bg-green-400 animate-ping mt-1" />
+                                <span className="text-green-400 font-bold">Action Taken: Alert generated and assigned to Investigator Herald.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="py-24 px-6 border-t border-white/5 relative overflow-hidden">
                 <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 blur-[100px] rounded-full -z-10" />
 
