@@ -15,7 +15,7 @@ export default function PrototypePage() {
                         <Link href="/" className="hover:text-cyan-400 transition-colors flex items-center gap-2 text-sm font-medium">
                             <ArrowLeft size={16} /> Back to Dashboard
                         </Link>
-                        <div className="h-4 w-[1px] bg-white/10" />
+                        <div className="h-4 w-px bg-white/10" />
                         <span className="text-white/40 text-sm font-mono tracking-tighter uppercase italic">SENTINEL v2.0 Prototype</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -33,7 +33,7 @@ export default function PrototypePage() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-8">
                         <Sparkles size={14} /> Future Roadmap
                     </div>
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+                    <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 bg-linear-to-b from-white to-white/40 bg-clip-text text-transparent">
                         Surveillance <br /> Redefined
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -50,7 +50,7 @@ export default function PrototypePage() {
                             alt="v2.0 Dashboard Hero"
                             className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-40" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black to-transparent opacity-40" />
                         <div className="absolute bottom-8 left-8 right-8">
                             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                                 <div>
@@ -96,7 +96,7 @@ export default function PrototypePage() {
                             <img
                                 src="/images/v2_analytics.png"
                                 alt="Advanced Analytics View"
-                                className="w-full h-auto h-full object-cover"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                     </div>
@@ -167,17 +167,17 @@ export default function PrototypePage() {
                                 <span className="text-cyan-500 font-bold">→</span>
                                 <span className="text-white/80">Anomaly Detected: <span className="text-red-400 font-bold">STOCK_XYZ</span> (Vol spike 4.5x std_dev)</span>
                             </div>
-                            <div className="flex gap-4 pl-8 border-l border-white/10">
+                            <div className="flex gap-4 pl-4 border-l-2 border-white/5">
                                 <span className="text-white/40 italic">Searching regulatory database (RAG)...</span>
                             </div>
-                            <div className="flex gap-4 pl-8 border-l border-white/10">
+                            <div className="flex gap-4 pl-4 border-l-2 border-white/5">
                                 <span className="text-white/40 font-bold">Found Reference:</span> <span className="text-cyan-400 underline underline-offset-4 decoration-cyan-400/30 font-bold">POJK 31/04/2015 Artikel 2</span>
                             </div>
                             <div className="flex gap-4 pt-4">
                                 <span className="text-cyan-500 font-bold">→</span>
                                 <span className="text-amber-400 font-bold tracking-tighter uppercase text-xs">[AI Reasoning Insight]</span>
                             </div>
-                            <div className="mt-2 p-6 bg-white/[0.02] rounded-lg border border-white/5 italic text-white/50 text-xs leading-relaxed max-w-2xl">
+                            <div className="mt-2 p-6 bg-white/5 rounded-lg border border-white/5 italic text-white/50 text-xs leading-relaxed max-w-2xl">
                                 "Transaksi ini menunjukkan pola 'front-running' yang berkorelasi dengan berita RUPS internal pukul 14:00 WIB.
                                 Sesuai POJK 31, akun ini harus masuk ke daftar pantau investigasi level 1."
                             </div>
@@ -189,6 +189,69 @@ export default function PrototypePage() {
                     </div>
                 </div>
             </section>
+
+            {/* NEW: Investigator's Toolbox & Lifecycle */}
+            <section className="py-24 px-6 border-t border-white/5 bg-[#0a0a0a]">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    {/* Column 1: Investigator's Toolbox */}
+                    <div className="p-8 rounded-2xl bg-white/[0.01] border border-white/5 space-y-8">
+                        <div>
+                            <h3 className="text-xl font-bold tracking-tight mb-2">Investigator's <br /> Toolbox</h3>
+                            <p className="text-white/30 text-xs">Essential tools for deep-dive analysis.</p>
+                        </div>
+                        <div className="space-y-4">
+                            {[
+                                { title: 'Nexus Entity Linker', icon: Sparkles, desc: 'Memetakan hubungan antar akun yang mencurigakan.' },
+                                { title: 'Regulatory Sandbox', icon: Shield, desc: 'Simulasi audit pada dataset historis.' },
+                                { title: 'Time-Travel Review', icon: Database, desc: 'Review data bursa detik-demi-detik.' }
+                            ].map((tool, i) => (
+                                <div key={i} className="group p-4 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-500/30 transition-all cursor-default">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <tool.icon size={16} className="text-cyan-400" />
+                                        <h4 className="text-sm font-bold tracking-wide">{tool.title}</h4>
+                                    </div>
+                                    <p className="text-[10px] text-white/40 leading-relaxed">{tool.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Column 2 & 3: Lifecycle of an Alert */}
+                    <div className="lg:col-span-2 p-8 rounded-2xl bg-white/[0.01] border border-white/5 space-y-12">
+                        <div className="text-center lg:text-left">
+                            <h3 className="text-xl font-bold tracking-tight mb-2 uppercase italic tracking-widest text-cyan-500">Lifecycle of an Alert</h3>
+                            <p className="text-white/30 text-xs">Transforming raw signals into regulatory actions.</p>
+                        </div>
+
+                        <div className="relative">
+                            {/* Connector Line */}
+                            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-linear-to-r from-cyan-500/20 via-violet-500/20 to-cyan-500/20 -translate-y-1/2 hidden md:block" />
+
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                                {[
+                                    { step: '01', title: 'Detection', desc: 'AI mendeteksi anomali volume/harga secara real-time.' },
+                                    { step: '02', title: 'RAG Context', desc: 'Sistem merinci relevansi regulasi POJK otomatis.' },
+                                    { step: '03', title: 'Human Review', desc: 'Investigator memverifikasi temuan AI lewat dashboard.' },
+                                    { step: '04', title: 'Reporting', desc: 'Laporan kepatuhan di-generate & dikirim ke regulator.' }
+                                ].map((step, i) => (
+                                    <div key={i} className="flex flex-col items-center text-center space-y-4 bg-black p-4 rounded-xl md:bg-transparent">
+                                        <div className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-xs font-bold font-mono text-cyan-400 z-10 box-content outline outline-8 outline-black">
+                                            {step.step}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-sm mb-1">{step.title}</h4>
+                                            <p className="text-[10px] text-white/40 leading-relaxed px-2">{step.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
             <section className="py-24 px-6 border-t border-white/5 relative overflow-hidden">
                 <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 blur-[100px] rounded-full -z-10" />
 
