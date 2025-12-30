@@ -25,7 +25,7 @@ export default function Home() {
           <Lock size={12} /> Secure Trading Intelligence
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent italic">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-linear-to-b from-white to-white/40 bg-clip-text text-transparent italic">
           Protecting The <br /> Future of IDX
         </h1>
 
@@ -54,7 +54,7 @@ export default function Home() {
             { title: 'AI Reasoning', desc: 'Menggunakan Llama 3.1 untuk interpretasi narasi transaksi.', icon: Sparkles },
             { title: 'Quant Metrics', desc: 'Skoring resiko berdasarkan volume dan anomali harga.', icon: BarChart3 }
           ].map((item, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
+            <div key={i} className="p-8 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 transition-colors">
               <item.icon className="text-cyan-400 mb-4" size={24} />
               <h3 className="font-bold text-lg mb-2">{item.title}</h3>
               <p className="text-sm text-white/40 leading-relaxed">{item.desc}</p>
