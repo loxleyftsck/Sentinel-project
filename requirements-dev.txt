@@ -1,0 +1,49 @@
+# Development dependencies
+# Install with: pip install -r requirements-dev.txt
+
+# Code Quality
+black==24.1.1
+flake8==7.0.0
+isort==5.13.2
+mypy==1.8.0
+pylint==3.0.3
+pre-commit==3.6.0
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+hypothesis==6.98.3
+
+# Load Testing
+locust==2.20.1
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.5.6
+mkdocstrings[python]==0.24.0
+
+# Jupyter
+jupyterlab==4.0.12
+ipywidgets==8.1.1
+ipykernel==6.29.0
+
+# Debugging
+ipdb==0.13.13
+pdbpp==0.10.3
+
+# Build Tools
+setuptools==69.0.3
+wheel==0.42.0
+build==1.0.3
+
+# Data Version Control
+dvc==3.48.0
+dvc-gs==3.0.1  # Google Cloud Storage
+dvc-s3==3.2.0  # AWS S3
+
+# Notebook Tools
+nbconvert==7.14.2
+nbformat==5.9.2
+jupytext==1.16.1

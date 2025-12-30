@@ -1,0 +1,10 @@
+{
+  "response_time": null,
+  "concurrent": {
+    "throughput": 2.4383315138249597,
+    "success_rate": 0.0,
+    "total_time": 8.202330112457275
+  },
+  "health_check": 2.0548206686973574,
+  "memory_mb": 42.85546875
+}

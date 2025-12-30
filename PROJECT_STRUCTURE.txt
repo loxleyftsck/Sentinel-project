@@ -1,0 +1,312 @@
+# SENTINEL Project - Professional AI Research & Engineering Structure
+# Based on: Cookiecutter Data Science V2, Google ML Best Practices, MLOps Standards
+# Updated: December 2024
+
+SENTINEL-PROJECT/
+│
+├── .github/                          # GitHub-specific files
+│   ├── workflows/                    # CI/CD pipelines
+│   │   ├── ci-tests.yml             # Automated testing
+│   │   ├── cd-deploy.yml            # Deployment automation
+│   │   ├── model-training.yml       # Scheduled model retraining
+│   │   └── data-validation.yml      # Data quality checks
+│   └── ISSUE_TEMPLATE/               # Issue templates
+│       ├── bug_report.md
+│       └── feature_request.md
+│
+├── data/                             # Data directory (NEVER commit to git)
+│   ├── raw/                          # Original, immutable data
+│   │   ├── regulations/              # POJK PDFs, regulatory documents
+│   │   ├── transactions/             # Historical transaction data
+│   │   ├── news/                     # Scraped news articles
+│   │   └── market_data/              # Stock prices, volumes
+│   ├── interim/                      # Intermediate, transformed data
+│   │   ├── cleaned/                  # Cleaned datasets
+│   │   ├── validated/                # Schema-validated data
+│   │   └── augmented/                # Feature-augmented data
+│   ├── processed/                    # Final, analysis-ready data
+│   │   ├── features/                 # Feature engineering outputs
+│   │   ├── embeddings/               # Document embeddings
+│   │   └── train_test_split/         # Temporally-split datasets
+│   └── external/                     # External data sources
+│       ├── benchmark/                # Benchmark datasets
+│       └── third_party/              # External APIs, sources
+│
+├── models/                           # Trained models & artifacts
+│   ├── baselines/                    # Baseline models
+│   │   ├── rule_based/               # Rule-based detector
+│   │   └── statistical/              # Statistical models
+│   ├── rag/                          # RAG models
+│   │   ├── v1.0/                     # Versioned models
+│   │   ├── v1.1/
+│   │   └── production/               # Production-ready model
+│   ├── embeddings/                   # Embedding models
+│   │   └── sentence-transformers/
+│   ├── checkpoints/                  # Training checkpoints
+│   └── registry/                     # Model registry metadata
+│       └── model_metadata.json
+│
+├── notebooks/                        # Jupyter notebooks (research)
+│   ├── 1.0-exploratory/             # Initial exploration (named by date-initials)
+│   │   ├── 1.1-data-eda.ipynb
+│   │   ├── 1.2-regulation-analysis.ipynb
+│   │   └── 1.3-feature-distribution.ipynb
+│   ├── 2.0-feature-engineering/      # Feature creation
+│   │   ├── 2.1-temporal-features.ipynb
+│   │   ├── 2.2-sentiment-features.ipynb
+│   │   └── 2.3-rag-features.ipynb
+│   ├── 3.0-modeling/                 # Model development
+│   │   ├── 3.1-baseline-models.ipynb
+│   │   ├── 3.2-rag-experiments.ipynb
+│   │   ├── 3.3-ensemble.ipynb
+│   │   └── 3.4-hyperparameter-tuning.ipynb
+│   ├── 4.0-evaluation/               # Model evaluation
+│   │   ├── 4.1-backtesting.ipynb
+│   │   ├── 4.2-performance-metrics.ipynb
+│   │   └── 4.3-error-analysis.ipynb
+│   └── 5.0-production/               # Production validation
+│       ├── 5.1-stress-testing.ipynb
+│       └── 5.2-monitoring-setup.ipynb
+│
+├── src/                              # Source code (production-ready)
+│   ├── __init__.py
+│   ├── sentinel/                     # Main package
+│   │   ├── __init__.py
+│   │   ├── data/                     # Data engineering
+│   │   │   ├── __init__.py
+│   │   │   ├── ingestion.py          # Data loading
+│   │   │   ├── validation.py         # Schema validation (Pandera)
+│   │   │   ├── preprocessing.py      # Cleaning, normalization
+│   │   │   └── feature_engineering.py # Feature creation
+│   │   ├── models/                   # Model architectures
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py               # Base model class
+│   │   │   ├── baseline.py           # Rule-based detector
+│   │   │   ├── rag_detector.py       # RAG-based detector
+│   │   │   └── ensemble.py           # Ensemble model
+│   │   ├── training/                 # Training logic
+│   │   │   ├── __init__.py
+│   │   │   ├── trainer.py            # Training orchestrator
+│   │   │   ├── callbacks.py          # Training callbacks
+│   │   │   └── metrics.py            # Custom metrics
+│   │   ├── evaluation/               # Evaluation logic
+│   │   │   ├── __init__.py
+│   │   │   ├── backtesting.py        # Walk-forward validation
+│   │   │   ├── metrics.py            # Quant metrics (IC, Sharpe)
+│   │   │   └── explainability.py     # SHAP, LIME
+│   │   ├── inference/                # Prediction logic
+│   │   │   ├── __init__.py
+│   │   │   ├── predictor.py          # Inference engine
+│   │   │   └── batch_predictor.py    # Batch processing
+│   │   ├── monitoring/               # ML monitoring
+│   │   │   ├── __init__.py
+│   │   │   ├── drift_detector.py     # Data/model drift
+│   │   │   ├── performance_monitor.py # Model performance
+│   │   │   └── alerting.py           # Alert management
+│   │   ├── api/                      # API layer
+│   │   │   ├── __init__.py
+│   │   │   ├── main.py               # FastAPI app
+│   │   │   ├── routes/               # API endpoints
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── analysis.py       # Analysis endpoints
+│   │   │   │   ├── regulations.py    # RAG query endpoints
+│   │   │   │   └── monitoring.py     # Monitoring endpoints
+│   │   │   ├── schemas.py            # Pydantic models
+│   │   │   ├── dependencies.py       # FastAPI dependencies
+│   │   │   └── middleware.py         # Custom middleware
+│   │   ├── utils/                    # Utility functions
+│   │   │   ├── __init__.py
+│   │   │   ├── logging.py            # Logging configuration
+│   │   │   ├── config.py             # Configuration management
+│   │   │   └── helpers.py            # Helper functions
+│   │   └── db/                       # Database layer
+│   │       ├── __init__.py
+│   │       ├── models.py             # SQLAlchemy models
+│   │       ├── crud.py               # CRUD operations
+│   │       └── session.py            # Database session
+│   │
+│   └── pipelines/                    # ML pipelines (orchestration)
+│       ├── __init__.py
+│       ├── data_pipeline.py          # Data processing pipeline
+│       ├── training_pipeline.py      # Training pipeline
+│       └── inference_pipeline.py     # Inference pipeline
+│
+├── tests/                            # Test suite
+│   ├── __init__.py
+│   ├── unit/                         # Unit tests
+│   │   ├── test_data_processing.py
+│   │   ├── test_models.py
+│   │   ├── test_feature_engineering.py
+│   │   └── test_api.py
+│   ├── integration/                  # Integration tests
+│   │   ├── test_end_to_end.py
+│   │   └── test_pipeline.py
+│   ├── ml_tests/                     # ML-specific tests
+│   │   ├── test_model_invariants.py  # Behavioral testing
+│   │   ├── test_data_validation.py   # Data quality tests
+│   │   └── test_performance.py       # Performance tests
+│   ├── load/                         # Load tests
+│   │   └── locustfile.py             # Locust load testing
+│   ├── fixtures/                     # Test fixtures
+│   │   ├── sample_data.py
+│   │   └── mock_models.py
+│   └── conftest.py                   # Pytest configuration
+│
+├── config/                           # Configuration files
+│   ├── base.yaml                     # Base configuration
+│   ├── development.yaml              # Development settings
+│   ├── staging.yaml                  # Staging settings
+│   ├── production.yaml               # Production settings
+│   ├── model_config.yaml             # Model hyperparameters
+│   ├── data_config.yaml              # Data processing config
+│   └── monitoring_config.yaml        # Monitoring thresholds
+│
+├── scripts/                          # Utility scripts
+│   ├── setup/                        # Setup scripts
+│   │   ├── setup_environment.ps1     # Environment setup
+│   │   ├── init_database.py          # Database initialization
+│   │   └── download_models.py        # Download pre-trained models
+│   ├── data/                         # Data scripts
+│   │   ├── scrape_news.py            # News scraping
+│   │   ├── collect_regulations.py    # Regulation collection
+│   │   └── generate_synthetic.py     # Synthetic data generation
+│   ├── training/                     # Training scripts
+│   │   ├── train_baseline.py         # Train baseline model
+│   │   ├── train_rag.py              # Train RAG model
+│   │   └── hyperparameter_search.py  # HPO script
+│   ├── evaluation/                   # Evaluation scripts
+│   │   ├── run_backtesting.py        # Run backtest suite
+│   │   ├── generate_report.py        # Performance report
+│   │   └── compare_models.py         # Model comparison
+│   └── deployment/                   # Deployment scripts
+│       ├── build_docker.sh           # Docker build
+│       ├── deploy_to_cloud.py        # Cloud deployment
+│       └── rollback.py               # Rollback script
+│
+├── experiments/                      # Experiment tracking (MLflow)
+│   ├── mlruns/                       # MLflow runs
+│   ├── mlartifacts/                  # MLflow artifacts
+│   ├── experiment_configs/           # Experiment configurations
+│   │   ├── exp_001_baseline.yaml
+│   │   ├── exp_002_rag_v1.yaml
+│   │   └── exp_003_ensemble.yaml
+│   └── results/                      # Experiment results
+│       ├── metrics/                  # Metric CSVs
+│       ├── visualizations/           # Plots, charts
+│       └── reports/                  # Markdown reports
+│
+├── monitoring/                       # Monitoring & observability
+│   ├── prometheus/                   # Prometheus config
+│   │   ├── prometheus.yml
+│   │   └── alert_rules.yml
+│   ├── grafana/                      # Grafana dashboards
+│   │   ├── dashboards/
+│   │   │   ├── model_performance.json
+│   │   │   ├── system_health.json
+│   │   │   └── data_quality.json
+│   │   └── datasources/
+│   │       └── prometheus_ds.yaml
+│   ├── logs/                         # Application logs
+│   │   ├── app.log
+│   │   ├── training.log
+│   │   └── inference.log
+│   └── alerts/                       # Alert configurations
+│       └── alert_config.yaml
+│
+├── frontend/                         # Next.js frontend (separate repo in monorepo)
+│   ├── app/                          # Next.js 14 App Router
+│   │   ├── page.tsx                  # Landing page
+│   │   ├── analyze/
+│   │   │   └── page.tsx              # Analysis interface
+│   │   ├── regulations/
+│   │   │   └── page.tsx              # Regulation browser
+│   │   └── api/
+│   │       └── proxy/route.ts        # Backend proxy
+│   ├── components/                   # React components
+│   │   ├── ui/                       # shadcn/ui components
+│   │   ├── FileUpload.tsx
+│   │   ├── AnalysisResult.tsx
+│   │   └── AlertCard.tsx
+│   ├── lib/                          # Utilities
+│   │   ├── api-client.ts
+│   │   └── types.ts
+│   ├── public/                       # Static assets
+│   ├── package.json
+│   └── next.config.js
+│
+├── infrastructure/                   # Infrastructure as Code
+│   ├── docker/                       # Docker configurations
+│   │   ├── Dockerfile.api            # API container
+│   │   ├── Dockerfile.training       # Training container
+│   │   ├── Dockerfile.frontend       # Frontend container
+│   │   └── docker-compose.yml        # Local development
+│   ├── kubernetes/                   # K8s manifests
+│   │   ├── deployments/
+│   │   ├── services/
+│   │   └── ingress/
+│   ├── terraform/                    # Cloud infrastructure
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── ansible/                      # Configuration management
+│       └── playbooks/
+│
+├── docs/                             # Documentation
+│   ├── index.md                      # Documentation home
+│   ├── architecture/                 # Architecture docs
+│   │   ├── system_design.md
+│   │   ├── data_flow.md
+│   │   └── mlops_pipeline.md
+│   ├── api/                          # API documentation
+│   │   ├── openapi.yaml
+│   │   └── endpoints.md
+│   ├── research/                     # Research documentation
+│   │   ├── methodology.md
+│   │   ├── model_cards/              # Model documentation
+│   │   │   ├── baseline_v1.md
+│   │   │   └── rag_v1.3.md
+│   │   ├── experiment_log.md
+│   │   └── performance_analysis.md
+│   ├── deployment/                   # Deployment guides
+│   │   ├── local_setup.md
+│   │   ├── cloud_deployment.md
+│   │   └── troubleshooting.md
+│   └── contributing/                 # Contribution guides
+│       ├── code_style.md
+│       └── pull_request_template.md
+│
+├── reports/                          # Generated reports
+│   ├── figures/                      # Visualizations
+│   │   ├── confusion_matrices/
+│   │   ├── roc_curves/
+│   │   └── feature_importance/
+│   ├── backtesting/                  # Backtest reports
+│   │   ├── 2024-12-backtest.md
+│   │   └── performance_metrics.csv
+│   └── presentations/                # Presentation materials
+│       ├── investor_deck.pdf
+│       └── technical_demo.pptx
+│
+├── .dvc/                             # DVC configuration
+│   └── config
+├── .venv/                            # Virtual environment (gitignored)
+├── .env                              # Environment variables (gitignored)
+├── .env.example                      # Environment template
+├── .gitignore                        # Git ignore rules
+├── .dockerignore                     # Docker ignore rules
+│
+├── pyproject.toml                    # Python project config (PEP 518)
+├── requirements-quant.txt            # Production dependencies
+├── requirements-dev.txt              # Development dependencies
+├── setup.py                          # Package installation
+├── Makefile                          # Task automation
+├── dvc.yaml                          # DVC pipeline definition
+├── dvc.lock                          # DVC pipeline lock
+│
+├── README.md                         # Project overview
+├── ARCHITECTURE.md                   # System architecture
+├── QUICKSTART.md                     # Quick start guide
+├── CONTRIBUTING.md                   # Contribution guidelines
+├── LICENSE                           # Project license
+├── CHANGELOG.md                      # Version history
+└── ROADMAP_QUANT_ENHANCED.md         # Enhanced roadmap
