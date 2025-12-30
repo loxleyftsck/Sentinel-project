@@ -228,6 +228,19 @@ For security vulnerabilities, please see [SECURITY.md](SECURITY.md) for our disc
 - Indonesian OJK for providing regulatory data
 - [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) for project structure inspiration
 
+## 🧑‍🔬 Researcher Profile
+
+- **Researcher**: Herald Michain Samuel Theo Ginting
+- **Project Role**: Principal Investigator & AI Engineer
+- **Focus**: Quantitative Surveillance & Regulatory AI
+- **Affiliation**: Capital Market Compliance Research
+
+## 📚 Research & References
+
+This project is built upon a foundation of academic research and regulatory frameworks. For a detailed list of papers, citations, and mathematical methodologies used, please see:
+
+👉 **[RESEARCH_REFERENCES.md](docs/RESEARCH_REFERENCES.md)**
+
 ## 📧 Contact
 
 - **Project**: SENTINEL Insider Trading Detection

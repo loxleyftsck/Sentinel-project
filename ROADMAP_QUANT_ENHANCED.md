@@ -1268,7 +1268,7 @@ If interviewer asks:
 ### 📅 FINAL PROGRESS SUMMARY
 
 | Phase | Milestone | Status | Score |
-|-------|-----------|--------|-------|
+| :--- | :--- | :--- | :--- |
 | Phase 0 | Foundation & Setup | ✅ 100% | 100/100 |
 | Week 1 | Environment & RAG POC | ✅ 100% | 100/100 |
 | Week 2 | Data Acquisition | ✅ 100% | 100/100 |
